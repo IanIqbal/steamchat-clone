@@ -3,20 +3,25 @@ import { useState } from 'react';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-
+import {ArExample} from "../../components/ArExample"
+import { ViroARSceneNavigator } from '@reactvision/react-viro';
 export default function TabTwoScreen() {
   const [isPressed, setIsPressed] = useState(false);
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
-      <TouchableOpacity style={styles.button} onPress={() => console.log('Button pressed')}>
-        <Text style={styles.buttonText} onPress={()=> setIsPressed(true)} >Transparent Button</Text>
-      </TouchableOpacity>
-    </View>
+    // <View style={styles.container}>
+    //   <Text style={styles.title}>Tab Two</Text>
+    //   <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+    //   <EditScreenInfo path="app/(tabs)/two.tsx" />
+    //   <TouchableOpacity style={styles.button} onPress={() => console.log('Button pressed')}>
+    //     <Text style={styles.buttonText} onPress={()=> setIsPressed(true)} >Transparent Button</Text>
+    //   </TouchableOpacity>
+    // </View>
 
+    <>
+      <ViroARSceneNavigator initialScene={{scene:ArExample}}>
 
+      </ViroARSceneNavigator>
+    </>
   );
 }
 
